@@ -1,27 +1,33 @@
-import $ from 'jquery';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/styles.css';
-import Triangle from './js/triangle.js';
-import Rectangle from './js/rectangle.js';
+import $ from "jquery";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.css";
+
 
 $(document).ready(function() {
-  $('#triangle-checker-form').submit(function(event) {
-    event.preventDefault();
-    const length1 = parseInt($('#length1').val());
-    const length2 = parseInt($('#length2').val());
-    const length3 = parseInt($('#length3').val());
-    const triangle = new Triangle(length1, length2, length3);
-    const response = triangle.checkType();
-    $('#response').append(`<p>${response}</p>`);
-  });
+  $('#button').click(function() {
+    const from = $('#from').val();
+    const to = $('#to').val();
+    const amount = $('#amount').val();
+    console.log(from);
+    $(".show").text($`${from} ${to} ${amount}`);
 
-  $('#rectangle-area-form').submit(function(event) {
-    event.preventDefault();
-    const length1 = parseInt($('#rect-length1').val());
-    const length2 = parseInt($('#rect-length2').val());
-    const rectangle = new Rectangle(length1, length2);
-    const response = rectangle.getArea();
-    $('#response2').append(`<p> The area of the rectangle is ${response}.</p>`);
+    // let request = new XMLHttpRequest();
+    // const url = `https://api.exchangeratesapi.io/latest?base=${to}`;
+
+    // request.onreadystatechange = function() {
+    //   if (this.readyState === 4 && this.status === 200) {
+    //     const response = JSON.parse(this.responseText);
+    //     getElements(response);
+    //   }
+    // };
+
+    // request.open("GET", url, true);
+    // request.send();
+    // const getElements = function (response) {
+    //   $("#show").text(
+    //     `the ${to} is ${amount} ${response.rates[from]}`
+    //   );
+    // };
   });
 });
