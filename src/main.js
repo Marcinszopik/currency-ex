@@ -10,24 +10,24 @@ $(document).ready(function() {
     const to = $('#to').val();
     const amount = $('#amount').val();
     console.log(from);
-    $(".show").text($`${from} ${to} ${amount}`);
+    
 
-    // let request = new XMLHttpRequest();
-    // const url = `https://api.exchangeratesapi.io/latest?base=${to}`;
+    let request = new XMLHttpRequest();
+    const url = `https://api.exchangeratesapi.io/latest?base=${from}`;
 
-    // request.onreadystatechange = function() {
-    //   if (this.readyState === 4 && this.status === 200) {
-    //     const response = JSON.parse(this.responseText);
-    //     getElements(response);
-    //   }
-    // };
+    request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const response = JSON.parse(this.responseText);
+        getElements(response);
+      }
+    };
 
-    // request.open("GET", url, true);
-    // request.send();
-    // const getElements = function (response) {
-    //   $("#show").text(
-    //     `the ${to} is ${amount} ${response.rates[from]}`
-    //   );
-    // };
+    request.open("GET", url, true);
+    request.send();
+    const getElements = function (response) {
+      $("#show").text(
+        `the ${from} is ${amount} multiply ${response.rates[to]} ${to}`
+      );
+    };
   });
 });
