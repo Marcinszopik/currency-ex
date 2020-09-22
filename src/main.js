@@ -12,16 +12,20 @@ $(document).ready(function() {
     const amount = $('#amount').val();
     console.log(from);
     
+
     (async () => {
       let currencyService = new CurrencyService();
       const response = await currencyService.getCurrencyByCountry(from);
       getElements(response);
     })();
 
-
     const getElements = function (response) {
+      let amountnum = `${amount}`;
+      let responsenum = `${response.rates[to]}`;
+      let currency = amountnum * responsenum;
+
       $("#show").text(
-        `the ${from} is ${amount} multiply ${response.rates[to]} ${to}`
+        `the ${from} is ${currency} in ${to}`
       );
     };
   });
