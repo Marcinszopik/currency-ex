@@ -25,7 +25,7 @@ $(document).ready(function() {
       let currency = amountnum * responsenum;
 
       $("#show").text(
-        `the ${from} is ${currency} in ${to}`
+        `the ${from} is ${currency.toFixed(2)} in ${to}`
       );
     };
   });
