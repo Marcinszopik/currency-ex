@@ -15,3 +15,6 @@
  
 # Technologies Used
 
+- index.html
+- styles.css
+
