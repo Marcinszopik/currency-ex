@@ -1,4 +1,13 @@
-### currency-ex 
+
+
+
+### Currency-ex App
+
+### Contributors 
+
+ Marcin Szopik   09.20.2020 
+
+
 
 *** The application correctly uses webpack ***
 *** The app separates user interface and business logic functionalities into different JavaScript files ***
@@ -9,3 +18,13 @@
 
 - index.html
 - styles.css
+- Javascript
+
+
+### contact information 
+
+szopiks@yahoo.com
+
+### legal
+
+Copyright(c) 2020 Marcin Szopik
