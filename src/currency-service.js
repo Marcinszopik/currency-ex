@@ -9,7 +9,7 @@ export class CurrencyService {
               jsonifiedResponse = false;
           }
           return jsonifiedResponse;
-      } catch {
+    } catch { 
           return false;
       }
     }
