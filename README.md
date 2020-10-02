@@ -7,6 +7,9 @@
 
  Marcin Szopik   09.20.2020 
 
+### Fuctionality ###
+
+1. Consumes API data from a foreign currency exchange rate application, and calculates the exchange rate from base currency to target currency
 
 
 *** The application correctly uses webpack ***
